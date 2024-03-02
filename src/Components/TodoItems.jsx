@@ -1,10 +1,11 @@
 import { MdOutlineDeleteForever } from "react-icons/md";
+import styles from "./TodoItems.module.css";
 
 function TodoItems({ TodoName, TodoDate, TodoDelete }) {
   return (
     <div className="container">
       <div className="row  mb-2">
-        <div className="col-5">{TodoName}</div>
+        <div className={`col-5 ` + styles.center}>{TodoName}</div>
         <div className="col-4">{TodoDate}</div>
         <div className="col-3">
           <button

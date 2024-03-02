@@ -26,7 +26,7 @@ function AddTodo({ AddItem }) {
           <input
             type="text"
             name=""
-            className="w-100"
+            className="w-100 form-control"
             id="txtTodo"
             placeholder="Enter Todo here"
             value={todoName}
@@ -38,7 +38,7 @@ function AddTodo({ AddItem }) {
           <input
             type="date"
             id="TodoDate"
-            className="w-100"
+            className="w-100 form-control"
             value={todoDate}
             onChange={HandleTodoDate}
           />
