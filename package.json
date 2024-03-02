@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mahesh77722.github.io/todo-list",
+  "homepage": "https://mahesh77722.github.io/React_Todo ",
   "scripts": {
     "deploy": "gh-pages -d build",
     "dev": "vite",
