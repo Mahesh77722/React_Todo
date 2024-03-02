@@ -6,7 +6,7 @@ function TodoItems({ TodoName, TodoDate, TodoDelete }) {
     <div className="container">
       <div className="row  mb-2">
         <div className={`col-5 ` + styles.center}>{TodoName}</div>
-        <div className="col-4">{TodoDate}</div>
+        <div className={`col-4 ` + styles.center}>{TodoDate}</div>
         <div className="col-3">
           <button
             className="w-100 btn btn-danger todo-btn"
