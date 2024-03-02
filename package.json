@@ -10,8 +10,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test":"vite test",
-    "eject": "vite eject"
+    "test":"react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
