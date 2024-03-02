@@ -1,36 +1,39 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { MdAdd } from "react-icons/md";
 
 function AddTodo({ AddItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [todoDate, setTodoDate] = useState("");
+  // const [todoName, setTodoName] = useState("");
+  // const [todoDate, setTodoDate] = useState("");
+  const NameRef = useRef();
+  const DateRef = useRef();
 
-  const HandleTodoName = (e) => {
-    setTodoName(e.target.value);
-  };
+  // const HandleTodoName = (e) => {
+  //   setTodoName(e.target.value);
+  // };
 
-  const HandleTodoDate = (e) => {
-    setTodoDate(e.target.value);
-  };
+  // const HandleTodoDate = (e) => {
+  //   setTodoDate(e.target.value);
+  // };
 
-  const HandleTodoBtnClick = () => {
-    AddItem(todoName, todoDate);
-    setTodoDate("");
-    setTodoName("");
+  const HandleTodoBtnClick = (event) => {
+    const Name = NameRef.current.value;
+    const Date = DateRef.current.value;
+    AddItem(Name, Date);
+    NameRef.current.value = "";
+    DateRef.current.value = "";
+    event.preventDefault();
   };
 
   return (
     <div className="container text-center">
-      <div className="row">
+      <form className="row" onSubmit={HandleTodoBtnClick}>
         <div className="col-5 mb-2">
           <input
             type="text"
-            name=""
+            ref={NameRef}
             className="w-100 form-control"
             id="txtTodo"
             placeholder="Enter Todo here"
-            value={todoName}
-            onChange={HandleTodoName}
           />
         </div>
 
@@ -38,21 +41,17 @@ function AddTodo({ AddItem }) {
           <input
             type="date"
             id="TodoDate"
+            ref={DateRef}
             className="w-100 form-control"
-            value={todoDate}
-            onChange={HandleTodoDate}
           />
         </div>
 
         <div className="col-3 mb-2">
-          <button
-            className=" w-100 btn btn-success"
-            onClick={HandleTodoBtnClick}
-          >
+          <button type="submit" className=" w-100 btn btn-success">
             <MdAdd />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
